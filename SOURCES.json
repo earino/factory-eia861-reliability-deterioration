@@ -1,0 +1,107 @@
+{
+  "publisher-terms.snapshot": {
+    "url": "https://www.eia.gov/about/copyrights_reuse.php",
+    "bytes": 52536,
+    "sha256": "c16dcdd32bd0294eef3dbc8cdc11cd3a815502be1e938f1dfc84736358a4462c",
+    "retrieved_at_unix": 1794546861.917857,
+    "transport_attempts": 1
+  },
+  "publisher-documentation.snapshot": {
+    "url": "https://www.eia.gov/electricity/data/eia861/",
+    "bytes": 77008,
+    "sha256": "c3cb5b138952c8cd0fae3e479b3df07019cd21e6097a2987c2ed2a2224b3170a",
+    "retrieved_at_unix": 1794546862.2723923,
+    "transport_attempts": 1
+  },
+  "f8612013a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612013.zip",
+    "bytes": 3245855,
+    "sha256": "10263d78531c426a28dc36281ca45fcdbfc0b8e69e8dfd74463985c11d533c9b",
+    "retrieved_at_unix": 1794546863.0550413,
+    "transport_attempts": 1
+  },
+  "f8612014a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612014.zip",
+    "bytes": 3411489,
+    "sha256": "7b53e6f1ef401c71fd99d4351b3d8529636efbea7fab93b61dc1fff7b4c065bd",
+    "retrieved_at_unix": 1794546863.9073465,
+    "transport_attempts": 1
+  },
+  "f8612015a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612015.zip",
+    "bytes": 4391160,
+    "sha256": "a8ab1ac504f9d62ed83acf7bcce8000aefb360c0a9d1b66e8c97761557e49ef1",
+    "retrieved_at_unix": 1794546864.6755786,
+    "transport_attempts": 1
+  },
+  "f8612016a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612016.zip",
+    "bytes": 4930673,
+    "sha256": "8cbcd008780c2861ca10e4dfc3e44fddc4d3db3cb4cbd34f40eccbd673485515",
+    "retrieved_at_unix": 1794546865.7927952,
+    "transport_attempts": 1
+  },
+  "f8612017a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612017.zip",
+    "bytes": 5981558,
+    "sha256": "474d391ce1814af24334aec2c94a6421295f00d262fb8cfc153a5dea197dcc14",
+    "retrieved_at_unix": 1794546867.237314,
+    "transport_attempts": 1
+  },
+  "f8612018a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612018.zip",
+    "bytes": 6030180,
+    "sha256": "90f1d9e34665d91347d476ade7ff88261896a158eda640b7ec7002b8027eb8f8",
+    "retrieved_at_unix": 1794546868.3048775,
+    "transport_attempts": 1
+  },
+  "f8612019a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612019.zip",
+    "bytes": 5348318,
+    "sha256": "25043e6baa8f6bf28892b22b06877b9efef2a22b19dd32e0f3b0c9b720e222e9",
+    "retrieved_at_unix": 1794546869.4445968,
+    "transport_attempts": 1
+  },
+  "f8612020a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612020.zip",
+    "bytes": 4453359,
+    "sha256": "abed9f678bd7f7d97dced210205eb9c894d0536ee5ec0041a45e3c329d41e616",
+    "retrieved_at_unix": 1794546870.9667382,
+    "transport_attempts": 1
+  },
+  "f8612021a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612021.zip",
+    "bytes": 4427163,
+    "sha256": "6008618e91bc0e70d841ebbc19283b96b66d7ac95e20b3ad553bd31a20cd7bd4",
+    "retrieved_at_unix": 1794546872.00982,
+    "transport_attempts": 1
+  },
+  "f8612022a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612022.zip",
+    "bytes": 4387531,
+    "sha256": "fe2530295d931c3bc2340918a389745c378e0e6dc960db7c6269b52a616247e0",
+    "retrieved_at_unix": 1794546872.961598,
+    "transport_attempts": 1
+  },
+  "f8612023a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612023.zip",
+    "bytes": 4604583,
+    "sha256": "0acd67ab84cdaef09fd47b4449f2c944f8731c2b3c695ec3a97bb6c0690a4d61",
+    "retrieved_at_unix": 1794546874.4193897,
+    "transport_attempts": 1
+  },
+  "f8612024a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/archive/zip/f8612024.zip",
+    "bytes": 4568208,
+    "sha256": "77ce49c60ac5a6bad50c442fc401aad5404a21da875dc5cbaba353af5ede54de",
+    "retrieved_at_unix": 1794546875.8145938,
+    "transport_attempts": 1
+  },
+  "f8612025a.zip": {
+    "url": "https://www.eia.gov/electricity/data/eia861/zip/f8612025.zip",
+    "bytes": 4756816,
+    "sha256": "f59f6c732bf685fe0a1591b32227f5ce572dc0dfd26bb5caaeed128ac4e3a396",
+    "retrieved_at_unix": 1794546877.14791,
+    "transport_attempts": 1
+  }
+}

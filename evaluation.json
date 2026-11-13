@@ -1,0 +1,67 @@
+{
+  "protocol": "Existing unmodified runner baseline on public validation only; no holdout scoring",
+  "rows": 1294,
+  "metrics": {
+    "full_model": {
+      "auc": 0.6963780731791774,
+      "brier": 0.1190485278420198
+    },
+    "majority_prior": {
+      "auc": 0.5,
+      "brier": 0.12500660216769513
+    },
+    "calendar_identity": {
+      "auc": 0.6172737678427147,
+      "brier": 0.15601477427071603
+    }
+  },
+  "by_year": {
+    "2020": {
+      "rows": 637,
+      "positive_rate": 0.13500784929356358,
+      "metrics": {
+        "full_model": {
+          "auc": 0.7002701219769553,
+          "brier": 0.11245760195330318
+        },
+        "majority_prior": {
+          "auc": 0.5,
+          "brier": 0.11830678187396536
+        },
+        "calendar_identity": {
+          "auc": 0.6439138142067276,
+          "brier": 0.14435332257646735
+        }
+      }
+    },
+    "2021": {
+      "rows": 657,
+      "positive_rate": 0.1552511415525114,
+      "metrics": {
+        "full_model": {
+          "auc": 0.6931990814343756,
+          "brier": 0.1254388167173813
+        },
+        "majority_prior": {
+          "auc": 0.5,
+          "brier": 0.1315024705498959
+        },
+        "calendar_identity": {
+          "auc": 0.5941794735912383,
+          "brier": 0.1673212350458095
+        }
+      }
+    }
+  },
+  "majority_accuracy": 0.8547140649149922,
+  "calendar_identity_unseen_rows": 103,
+  "persistence": "Not applicable; see construction notes",
+  "limitations": [
+    "No uncertainty interval; observed differences do not establish universal headroom"
+  ],
+  "runner_files": {
+    "train.py": "a3c6bcf13735bc85c52129ded68f839090dffdc266ebc3810dc61b2e6ea5e7e8",
+    "validate.py": "b597e7f84fed614e64b4a86fbecbd6ec0145916a24d0d221a796586976418e7b",
+    "validate.sh": "3f06ca48f11c2e05d331b4d8394284925de660c1d4b086d2f8243959e83b7e6d"
+  }
+}

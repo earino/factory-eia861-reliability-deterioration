@@ -1,0 +1,121 @@
+{
+  "checks": [
+    {
+      "check": "each annual publisher ZIP yielded a Reliability schedule member",
+      "observed": "2013 from Reliability_2013.xlsx ; 2014 from Reliability_2014.xlsx ; 2015 from Reliability_2015.xlsx ; 2016 from Reliability_2016.xlsx ; 2017 from Reliability_2017.xlsx ; 2018 from Reliability_2018.xlsx ; 2019 from Reliability_2019.xlsx ; 2020 from Reliability_2020.xlsx ; 2021 from Reliability_2021.xlsx ; 2022 from Reliability_2022.xlsx ; 2023 from Reliability_2023.xlsx ; 2024 from Reliability_2024.xlsx ; 2025 from Reliability_2025.xlsx",
+      "expected": "one Reliability workbook per annual ZIP for 2013 through 2025",
+      "passed": true
+    },
+    {
+      "check": "utility-year records parsed from the Reliability workbooks",
+      "observed": "2013 -> 946 ; 2014 -> 980 ; 2015 -> 1020 ; 2016 -> 1057 ; 2017 -> 1078 ; 2018 -> 1114 ; 2019 -> 1184 ; 2020 -> 944 ; 2021 -> 958 ; 2022 -> 960 ; 2023 -> 967 ; 2024 -> 971 ; 2025 -> 976",
+      "expected": "at least one valid utility number row in every vintage",
+      "passed": true
+    },
+    {
+      "check": "utility identifier, customer count, SAIDI and SAIFI with and without major event day fields located by header pattern in every vintage",
+      "observed": "2013 -> sheet Reliability_States, rows 946, customer columns 2, state column absent, ownership column found, standard column found ; 2014 -> sheet Reliability_States, rows 980, customer columns 2, state column absent, ownership column found, standard column found ; 2015 -> sheet Reliability_States, rows 1020, customer columns 2, state column absent, ownership column found, standard column found ; 2016 -> sheet Reliability_States, rows 1057, customer columns 2, state column absent, ownership column found, standard column found ; 2017 -> sheet Reliability_States, rows 1078, customer columns 2, state column absent, ownership column found, standard column found ; 2018 -> sheet Reliability_States, rows 1114, customer columns 2, state column absent, ownership column found, standard column found ; 2019 -> sheet Reliability_States, rows 1184, customer columns 2, state column absent, ownership column found, standard column found ; 2020 -> sheet Reliability_States, rows 944, customer columns 2, state column absent, ownership column found, standard column found ; 2021 -> sheet Reliability_States, rows 958, customer columns 2, state column absent, ownership column found, standard column found ; 2022 -> sheet Reliability_States, rows 960, customer columns 2, state column absent, ownership column found, standard column found ; 2023 -> sheet Reliability_States, rows 967, customer columns 2, state column absent, ownership column found, standard column found ; 2024 -> sheet Reliability_States, rows 971, customer columns 2, state column absent, ownership column found, standard column found ; 2025 -> sheet Reliability_States, rows 976, customer columns 2, state column absent, ownership column found, standard column found",
+      "expected": "every vintage exposes a utility identifier, a customer or meter count, and both with-MED and without-MED SAIDI and SAIFI columns",
+      "passed": true
+    },
+    {
+      "check": "unit and frame check: 2024 national customer-weighted SAIDI in minutes, with and without major event days",
+      "observed": "with major event days 662.6 ; without major event days 131.63",
+      "expected": "publisher state and national table reports about 662.6 minutes with major event days and 131.6 minutes without for 2024; reconstruction accepted inside a broad minutes-per-customer band with the with-MED aggregate above the without-MED aggregate",
+      "passed": true,
+      "kind": "unit"
+    },
+    {
+      "check": "unit and frame check: Florida SAIDI with major event days, 2024 against 2025",
+      "observed": "2024 1487.65 ; 2025 72.21",
+      "expected": "publisher state evidence reports about 1487.6 minutes for Florida in 2024 against about 72.7 minutes in 2025, so the 2024 aggregate should exceed the 2025 aggregate",
+      "passed": true,
+      "kind": "unit"
+    },
+    {
+      "check": "2024 standard-specific blocks are used for their own reporters",
+      "observed": "IEEE rows drawn from the IEEE block 747 ; rows resolved as other standard 224 ; of those drawn from the other-standard block 224 ; other-standard block present True",
+      "expected": "IEEE reporters are populated from the IEEE block, and when a distinct other-standard block exists its reporters are not read from the IEEE block",
+      "passed": true
+    },
+    {
+      "check": "cohort window completeness and eligibility filters",
+      "observed": "cohorts 5809 ; diagnostics {'saidi_nomed_target_missing': 26, 'saidi_nomed_history_missing': 891, 'missing_four_year_window': 3307, 'reporting_standard_changed_or_unresolved': 612, 'customers_below_1000_or_missing': 9, 'state_missing': 2}",
+      "expected": "eligible cohorts carry one reliability record in each of calendar years Y minus 3, Y minus 2, Y minus 1 and Y plus 1, one consistent reporting standard, an allowed ownership category and at least 1000 lag-one customers",
+      "passed": true
+    },
+    {
+      "check": "deterministic chronological public and private split counts",
+      "observed": "{'train': 2453, 'eval': 1294, 'holdout': 2062} positives {'train': 427, 'eval': 188, 'holdout': 348}",
+      "expected": "nonempty train before 2020, eval from 2020 through 2021 and holdout from 2022 onward, each carrying positive labels",
+      "passed": true
+    },
+    {
+      "check": "split boundaries are half-open and non-overlapping",
+      "observed": "train max 2019-12-31T00:00:00.000 ; eval min 2020-12-31T00:00:00.000 ; eval max 2021-12-31T00:00:00.000 ; holdout min 2022-12-31T00:00:00.000",
+      "expected": "train strictly below 2020-01-01, eval from 2020-01-01 below 2022-01-01, holdout at or after 2022-01-01",
+      "passed": true
+    },
+    {
+      "check": "stable utility-cohort identifiers are unique",
+      "observed": "duplicate identifiers 0",
+      "expected": "zero duplicate utility cohort identifiers across all cohorts",
+      "passed": true
+    },
+    {
+      "check": "binary target has no missing or unknown outcomes converted to a label",
+      "observed": "target values [0, 1] ; missing 0",
+      "expected": "only 0 and 1, with utilities lacking a CY Y plus 1 SAIDI value dropped rather than coded negative",
+      "passed": true
+    },
+    {
+      "check": "declared features have nonempty parsed coverage",
+      "observed": "{'saidi_nomed_lag1': 5809, 'saidi_nomed_lag2': 5809, 'saidi_nomed_lag3': 5809, 'saidi_nomed_trend': 5799, 'saidi_with_med_lag1': 5747, 'saifi_nomed_lag1': 5309, 'saifi_with_med_lag1': 5290, 'caidi_nomed_lag1': 5296, 'customers_lag1': 5809, 'reporting_standard': 5809, 'ownership_code': 5809, 'state': 5809}",
+      "expected": "every declared feature column has at least one parsed value; missingness stays missing and is never zero filled",
+      "passed": true
+    },
+    {
+      "check": "SAIDI trend contains no infinite values",
+      "observed": "infinite trend values 0 ; missing 10",
+      "expected": "trend finite when the lag-three SAIDI is nonzero and missing when it is zero, with no interpolation",
+      "passed": true
+    },
+    {
+      "check": "reporting standard is resolved and consistent across the four filings of each cohort",
+      "observed": "resolved values ['IEEE', 'OTHER'] counts {'IEEE': 4524, 'OTHER': 1285}",
+      "expected": "only IEEE or OTHER after requiring one consistent standard across the four annual reliability filings",
+      "passed": true
+    },
+    {
+      "check": "ownership and state categories are resolved inside the shipped cohorts",
+      "observed": "ownership ['Cooperative', 'Investor Owned', 'Municipal', 'Political Subdivision', 'State'] ; distinct states 49 ; missing state 0",
+      "expected": "ownership among the six declared categories and a nonmissing two letter state code",
+      "passed": true
+    },
+    {
+      "check": "customer scale rule uses the lag-one filing only",
+      "observed": "minimum lag-one customers 1097.0",
+      "expected": "at least 1000 customers reported in calendar year Y minus 1",
+      "passed": true
+    },
+    {
+      "check": "feature years sit behind each forecast year while the label year sits ahead",
+      "observed": "maximum feature-year offset -1 ; target-year offset 1",
+      "expected": "all features taken at or before calendar year Y minus 1 and the label taken only from calendar year Y plus 1",
+      "passed": true
+    },
+    {
+      "check": "no label-derived group rates or auxiliary answer files are shipped",
+      "observed": "forbidden derived columns [] ; written files train.csv eval.csv holdout.csv",
+      "expected": "no eval or holdout group rates and no fixture labels or answer scaffolds",
+      "passed": true
+    },
+    {
+      "check": "shipped labels reproduce the frozen external rule on each stored row",
+      "observed": "rows checked 5809 ; mismatches 0 ; threshold ratio 1.5 applied to the median of the three stored lag values",
+      "expected": "one when calendar year Y plus 1 SAIDI excluding major event days is at or above 1.5 times the median of the stored Y minus 3, Y minus 2 and Y minus 1 values, zero otherwise",
+      "passed": true,
+      "kind": "unit"
+    }
+  ]
+}

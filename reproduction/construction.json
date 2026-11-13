@@ -1,0 +1,350 @@
+{
+  "construction_notes": "Repair of qualification metadata, not download code. The population, target rule, feature set, carry columns, split windows and row-level checks are unchanged. (1) decision_date is now also listed in carry_columns so the shipped time column is declared; it remains time_column. (2) Every continuous reliability measure is declared high cardinality alongside the identifier columns, matching the gate observation. (3) event_key_column is utility_id. The annual source has no day-level event date, and decision_date collapses all positives in a split to two or three calendar days. The utility identity is the conservative independent cluster actually available, and the limitation is stated explicitly rather than inventing outage dates. (4) timing now states a 365-day conservative availability bound from the most recent feature period end CY Y-1 to the 31 December Y decision instant, with source_kind administrative_record. This is a calendar bound, not a measured publisher lag; timing.observations remains empty because exact publication dates are unverified. (5) row_selection.latest_period_used is Y-1, the latest feature period. The prose records that the binary label is conditioned on the following calendar year outcome, that missing outcomes are dropped, and that the outcome value never enters features. (6) Feature evidence statuses for historical annual filings are marked assumed rather than verified, because current snapshots do not prove historical availability. Descriptive text about no CY Y or later value entering features replaces the earlier overbroad claim. No new source page was read in this phase; the 2025 file is still treated as final only on publisher evidence, and no publication observations were fabricated.",
+  "quality": {
+    "carry_columns": [
+      "utility_id",
+      "forecast_year",
+      "decision_date"
+    ],
+    "evaluation_contract": {
+      "access": "isolated_rows",
+      "cross_row_audit": {
+        "auxiliary_files_review": "Only public/train.csv, public/eval.csv and private/holdout.csv are written. No auxiliary evaluation files, fixture labels or answer scaffolds are produced.",
+        "probes": [],
+        "rationale": "Rows are utility-cohorts. Features are lagged at least one year behind the forecast year and the target uses only the following calendar year. No label-derived rates are shipped for eval or holdout. Event clustering uses utility identity because the annual source contains no day-level event date."
+      },
+      "feature_evidence": {
+        "caidi_nomed_lag1": {
+          "availability": "CY Y-1 annual filing; historical public availability before the decision instant is assumed, not proven by a full-row ledger. Derivation used only when the reported value is missing and SAIFI is positive.",
+          "source": "EIA-861 Reliability CAIDI excluding major event days, or arithmetic SAIDI divided by SAIFI",
+          "status": "assumed"
+        },
+        "customers_lag1": {
+          "availability": "CY Y-1 annual filing; historical public availability assumed; missing counts remain missing",
+          "source": "EIA-861 Reliability customer or meter count",
+          "status": "assumed"
+        },
+        "decision_date": {
+          "availability": "Deterministic calendar date constructed as 31 December of forecast year Y; exact publisher publication timing is assumed",
+          "source": "Constructed cohort decision date",
+          "status": "verified"
+        },
+        "forecast_year": {
+          "availability": "Deterministic from the cohort definition",
+          "source": "Constructed panel year",
+          "status": "verified"
+        },
+        "ownership_code": {
+          "availability": "CY Y-1 filing; category mapping assumed from Form EIA-861 instructions; unrecognized values are dropped rather than guessed",
+          "source": "EIA-861 Reliability or utility data ownership field",
+          "status": "assumed"
+        },
+        "reporting_standard": {
+          "availability": "CY Y-1 filing; inference from populated block used only when the indicator is absent",
+          "source": "EIA-861 Reliability standard indicator or standard-specific metric block",
+          "status": "assumed"
+        },
+        "saidi_nomed_lag1": {
+          "availability": "CY Y-1 annual filing; historical public availability before 31 December Y assumed, not proven",
+          "source": "EIA-861 Reliability SAIDI excluding major event days",
+          "status": "assumed"
+        },
+        "saidi_nomed_lag2": {
+          "availability": "CY Y-2 annual filing; historical public availability assumed",
+          "source": "EIA-861 Reliability SAIDI excluding major event days",
+          "status": "assumed"
+        },
+        "saidi_nomed_lag3": {
+          "availability": "CY Y-3 annual filing; historical public availability assumed",
+          "source": "EIA-861 Reliability SAIDI excluding major event days",
+          "status": "assumed"
+        },
+        "saidi_nomed_trend": {
+          "availability": "Computed from lag1 and lag3 at the decision instant; missing when lag3 is zero",
+          "source": "Deterministic ratio of reported SAIDI values",
+          "status": "verified"
+        },
+        "saidi_with_med_lag1": {
+          "availability": "CY Y-1 annual filing; historical public availability assumed",
+          "source": "EIA-861 Reliability SAIDI including major event days",
+          "status": "assumed"
+        },
+        "saifi_nomed_lag1": {
+          "availability": "CY Y-1 annual filing; historical public availability assumed",
+          "source": "EIA-861 Reliability SAIFI excluding major event days",
+          "status": "assumed"
+        },
+        "saifi_with_med_lag1": {
+          "availability": "CY Y-1 annual filing; historical public availability assumed",
+          "source": "EIA-861 Reliability SAIFI including major event days",
+          "status": "assumed"
+        },
+        "state": {
+          "availability": "CY Y-1 filing; two-letter code required",
+          "source": "EIA-861 Reliability or utility data state field",
+          "status": "assumed"
+        },
+        "utility_cohort_id": {
+          "availability": "Available for every shipped row",
+          "source": "Constructed from EIA utility number and forecast year",
+          "status": "verified"
+        },
+        "utility_id": {
+          "availability": "Reported in each annual Reliability filing",
+          "source": "EIA-861 Utility Number",
+          "status": "verified"
+        }
+      },
+      "limitations": [
+        "Reliability indices are self-reported and unaudited by EIA. Utilities may use IEEE 1366 or an internally defined method, and non-IEEE reporters self-determine major event days, so excluding-MED values are not strictly comparable across utilities.",
+        "Annual reliability is dominated by weather and storm occurrence. The declared feature set contains no storm, outage-cause or capital-spending covariates, so a large share of label variance is unpredictable by construction.",
+        "This is a current-vintage retrospective built from today published files. Values a regulator would have seen at the decision instant could differ from the final vintage, and exact historical publication dates were not verified.",
+        "Workbook layout is not stable across vintages. The parser matches headers by text pattern, allows both IEEE and other-standard blocks, and fails with observed headers when required fields are missing. Legacy .xls vintages are read by an embedded BIFF reader rather than an external xls package.",
+        "The panel recurs utilities across cohorts. Features are capped at CY Y-1 and no holdout is used to choose the target, features, thresholds or splits, but autocorrelation within splits still makes effective sample size smaller than row count.",
+        "Utilities that merge, change EIA utility number, file multiple state rows or switch reporting standard are dropped. This removes some large multi-state investor-owned utilities and slightly favors stable filers.",
+        "The label multiplies a utility own baseline by a fixed 1.5 factor, so a utility with an unusually low or volatile three-year baseline is mechanically easier or harder to flag. The rule was frozen before measurement and is not re-tuned.",
+        "The assumption that a calendar year final EIA-861 reliability file is public by 31 December of the following year is inferred from release practice, not from a complete publication ledger. Timing observations are deliberately empty because actual publication dates were not verified; the 365-day value is a conservative calendar bound, not a measured publisher lag.",
+        "No persistence score column is shipped. The lag-1 SAIDI level is a feature, not a calibrated persistence score for a relative jump, so the persistence reference is null rather than fabricated.",
+        "The 2025 file is treated as final based on publisher evidence. If a later re-release changes it, the holdout labels can move.",
+        "The annual source has no day-level event date. Decision dates collapse to one day per forecast year, so event clustering uses the utility identity as the conservative independent unit available; this is coarser than a genuine outage-event date."
+      ],
+      "selection": {
+        "evidence": "decision_date is 31 December Y, 365 days after the latest feature period end. Features use CY Y-3 through Y-1 only. The target uses only the following calendar year. No holdout is used for feature choice, threshold choice or split choice.",
+        "kind": "prediction_time"
+      },
+      "training_label_timing": "unverified",
+      "use": "retrospective_research",
+      "vintage": {
+        "evidence": "Annual EIA-861 ZIPs for 2013 through 2025, with the 2025 file described by the publisher as final data. Historical release vintages and exact publication dates were not independently verified.",
+        "kind": "current_snapshot"
+      }
+    },
+    "event_key_column": "utility_id",
+    "expected_duplicate_ids": 0,
+    "external_threshold": {
+      "source": "Frozen task rule: CY Y+1 SAIDI excluding major event days at or above 1.5 times the median of CY Y-3, Y-2 and Y-1 values. Not selected from evaluation or holdout scores.",
+      "unit": "ratio",
+      "value": 1.5
+    },
+    "features": [
+      "saidi_nomed_lag1",
+      "saidi_nomed_lag2",
+      "saidi_nomed_lag3",
+      "saidi_nomed_trend",
+      "saidi_with_med_lag1",
+      "saifi_nomed_lag1",
+      "saifi_with_med_lag1",
+      "caidi_nomed_lag1",
+      "customers_lag1",
+      "reporting_standard",
+      "ownership_code",
+      "state"
+    ],
+    "features_documented_at": "prediction_time",
+    "high_cardinality_columns": [
+      "utility_cohort_id",
+      "utility_id",
+      "saidi_nomed_lag1",
+      "saidi_nomed_lag2",
+      "saidi_nomed_lag3",
+      "saidi_nomed_trend",
+      "saidi_with_med_lag1",
+      "saifi_nomed_lag1",
+      "saifi_with_med_lag1",
+      "caidi_nomed_lag1",
+      "customers_lag1"
+    ],
+    "id_columns": [
+      "utility_cohort_id"
+    ],
+    "label_source_columns": [
+      "saidi_nomed_y1"
+    ],
+    "measurements": [
+      {
+        "column": "saidi_nomed_lag1",
+        "frame": "utility calendar-year SAIDI excluding major event days, minutes per average customer",
+        "unit": "minutes"
+      },
+      {
+        "column": "saidi_nomed_lag2",
+        "frame": "utility calendar-year SAIDI excluding major event days for CY Y-2, minutes per average customer",
+        "unit": "minutes"
+      },
+      {
+        "column": "saidi_nomed_lag3",
+        "frame": "utility calendar-year SAIDI excluding major event days for CY Y-3, minutes per average customer",
+        "unit": "minutes"
+      },
+      {
+        "column": "saidi_nomed_trend",
+        "frame": "lag1 minus lag3 divided by lag3; missing when lag3 is zero",
+        "unit": "ratio"
+      },
+      {
+        "column": "saidi_with_med_lag1",
+        "frame": "utility calendar-year SAIDI including major event days for CY Y-1, minutes per average customer",
+        "unit": "minutes"
+      },
+      {
+        "column": "saifi_nomed_lag1",
+        "frame": "utility calendar-year SAIFI excluding major event days for CY Y-1, interruptions per customer-year",
+        "unit": "interruptions per customer-year"
+      },
+      {
+        "column": "saifi_with_med_lag1",
+        "frame": "utility calendar-year SAIFI including major event days for CY Y-1, interruptions per customer-year",
+        "unit": "interruptions per customer-year"
+      },
+      {
+        "column": "caidi_nomed_lag1",
+        "frame": "utility calendar-year CAIDI excluding major event days for CY Y-1, minutes per interruption; derived as SAIDI divided by SAIFI when the reported CAIDI is absent and SAIFI is positive",
+        "unit": "minutes"
+      },
+      {
+        "column": "customers_lag1",
+        "frame": "customers or meters reported with the CY Y-1 Reliability schedule",
+        "unit": "customers"
+      },
+      {
+        "column": "deteriorated",
+        "frame": "CY Y+1 SAIDI excluding major event days at or above 1.5 times the median of CY Y-3, Y-2 and Y-1 values",
+        "unit": "ratio"
+      }
+    ],
+    "name": "eia861-reliability-deterioration",
+    "positive_label": 1,
+    "post_hoc_columns": [],
+    "split_windows": {
+      "eval": {
+        "end": "2022-01-01T00:00:00.000",
+        "start": "2020-01-01T00:00:00.000"
+      },
+      "holdout": {
+        "end": null,
+        "start": "2022-01-01T00:00:00.000"
+      },
+      "train": {
+        "end": "2020-01-01T00:00:00.000",
+        "start": null
+      }
+    },
+    "target": "deteriorated",
+    "task": {
+      "decision_user": "A state public utility commission reliability analyst or utility distribution-planning manager screening distribution utilities for likely deterioration in routine non-storm reliability, to sequence vegetation management, inspection and hardening review.",
+      "features": [
+        {
+          "availability": "Published in the CY Y-1 annual EIA-861 Reliability filing. Exact historical public availability before 31 December Y is assumed, not proven by a full-row ledger.",
+          "evidence_url": "https://www.eia.gov/electricity/annual/html/epa_11_02.html",
+          "meaning": "SAIDI excluding major event days for CY Y-1: minutes of non-momentary interruption the average customer experienced.",
+          "name": "saidi_nomed_lag1"
+        },
+        {
+          "availability": "Published in the CY Y-2 annual EIA-861 Reliability filing; at least two years old at the decision instant.",
+          "evidence_url": "https://www.eia.gov/electricity/annual/html/epa_11_02.html",
+          "meaning": "SAIDI excluding major event days for CY Y-2.",
+          "name": "saidi_nomed_lag2"
+        },
+        {
+          "availability": "Published in the CY Y-3 annual EIA-861 Reliability filing; three years old at the decision instant.",
+          "evidence_url": "https://www.eia.gov/electricity/annual/html/epa_11_02.html",
+          "meaning": "SAIDI excluding major event days for CY Y-3.",
+          "name": "saidi_nomed_lag3"
+        },
+        {
+          "availability": "Deterministic function of the three published lag values; no future data.",
+          "evidence_url": "https://www.eia.gov/electricity/data/eia861/",
+          "meaning": "Ratio of lag1 minus lag3 to lag3, a three-year level trend in non-storm outage duration. Missing when lag3 is zero; no interpolation.",
+          "name": "saidi_nomed_trend"
+        },
+        {
+          "availability": "Same CY Y-1 Reliability filing as saidi_nomed_lag1.",
+          "evidence_url": "https://www.eia.gov/electricity/annual/html/epa_11_02.html",
+          "meaning": "SAIDI including major event days for CY Y-1, showing how much recent duration came from storm-scale days.",
+          "name": "saidi_with_med_lag1"
+        },
+        {
+          "availability": "Same CY Y-1 Reliability filing.",
+          "evidence_url": "https://www.eia.gov/electricity/annual/html/epa_11_02.html",
+          "meaning": "SAIFI excluding major event days for CY Y-1: non-momentary interruptions per customer-year.",
+          "name": "saifi_nomed_lag1"
+        },
+        {
+          "availability": "Same CY Y-1 Reliability filing.",
+          "evidence_url": "https://www.eia.gov/electricity/annual/html/epa_11_02.html",
+          "meaning": "SAIFI including major event days for CY Y-1.",
+          "name": "saifi_with_med_lag1"
+        },
+        {
+          "availability": "Same CY Y-1 Reliability filing; derivation is arithmetic from two reported values and is documented rather than treated as reported source data.",
+          "evidence_url": "https://www.eia.gov/electricity/annual/html/epa_11_02.html",
+          "meaning": "CAIDI excluding major event days for CY Y-1: average minutes to restore an interruption. Derived from SAIDI divided by SAIFI when the reported CAIDI is absent and SAIFI is positive.",
+          "name": "caidi_nomed_lag1"
+        },
+        {
+          "availability": "Same CY Y-1 Reliability filing; missing counts are not replaced by zero.",
+          "evidence_url": "https://www.eia.gov/electricity/annual/html/epa_11_02.html",
+          "meaning": "Customer or meter count reported with the CY Y-1 Reliability schedule, used as a scale control.",
+          "name": "customers_lag1"
+        },
+        {
+          "availability": "Read from the CY Y-1 Reliability filing standard indicator or inferred from the populated standard-specific metric block when no indicator is present.",
+          "evidence_url": "https://www.eia.gov/electricity/data/eia861/",
+          "meaning": "Whether the utility reported under IEEE 1366 or an internally defined other method in CY Y-1, normalized to IEEE or OTHER. A utility must carry one consistent value across the four filings used by a cohort.",
+          "name": "reporting_standard"
+        },
+        {
+          "availability": "CY Y-1 utility filing; code mapping follows Form EIA-861 ownership categories. Rows with unrecognized ownership are excluded rather than guessed.",
+          "evidence_url": "https://www.eia.gov/survey/form/eia_861/instructions.pdf",
+          "meaning": "Utility ownership type among investor-owned, municipal, cooperative, political subdivision, federal or state, from the CY Y-1 Reliability filing or the annual utility data file.",
+          "name": "ownership_code"
+        },
+        {
+          "availability": "CY Y-1 Reliability or utility filing; only two-letter state codes are accepted.",
+          "evidence_url": "https://www.eia.gov/electricity/data/eia861/",
+          "meaning": "Utility reported state, used for calendar and regulatory-regime controls.",
+          "name": "state"
+        }
+      ],
+      "outcome_horizon": "Calendar year Y+1, observed when the CY Y+1 EIA-861 reliability file is published roughly 9 to 12 months later.",
+      "population": "U.S. electric distribution utilities identified by EIA utility number that report a non-missing SAIDI excluding major event days in CY Y-3, Y-2 and Y-1 under one consistent reporting standard, report at least 1,000 customers in CY Y-1, carry an ownership code among investor-owned, municipal, cooperative, political subdivision, federal or state, appear with exactly one reliability record in each of those years, and report a SAIDI excluding major event days for CY Y+1. Utilities filing multiple state rows or changing utility number are dropped for that cohort. Missing CY Y+1 outcomes are dropped, never coded negative. No CY Y or later value enters features.",
+      "prediction_time": "31 December of forecast year Y, using only Form EIA-861 reliability and utility attribute filings for calendar years Y-3, Y-2 and Y-1. Exact historical publication dates are assumed rather than verified. No CY Y or later value enters features.",
+      "question": "Given three years of published distribution-reliability history and utility attributes, will a U.S. electric distribution utility day-to-day outage duration, measured by SAIDI excluding major event days, jump by at least 50 percent above its own recent norm in the next calendar year?",
+      "simple_references": "Persistence control: predict 0 for every utility, the minority-class baseline. A lag-level persistence score can be formed from CY Y-1 SAIDI excluding major event days, but it is not a calibrated score for a relative jump. A repeat-last-jump rule predicts 1 when lag1 is at least 1.5 times lag2. Calendar and identity controls are state, ownership-code, reporting-standard and forecast-year base rates fitted on training cohorts only.",
+      "usefulness": "The label is not a field in any file. It requires linking four separate annual filings, computing a utility-specific three-year baseline, and observing the next filing. It combines duration with frequency and restoration-speed covariates that a single copied column cannot supply. Deterioration in non-storm reliability is an operational and regulatory screening question that persistence and level-only models handle poorly because the event is a within-utility relative jump rather than a level."
+    },
+    "time_column": "decision_date",
+    "timing": {
+      "features": {
+        "period": "Y-1",
+        "published_days_after_period_end": 365,
+        "source_kind": "administrative_record"
+      },
+      "observations": [],
+      "prediction_instant": {
+        "citation": "Decision instant 31 December Y, 365 days after the end of the most recent feature period CY Y-1. Exact publisher release dates were not verified; annual final files are conservatively assumed public by this date, and the 365-day value is not a measured publication lag.",
+        "days_after_period_end": 365,
+        "kind": "publication",
+        "period": "Y-1"
+      },
+      "row_selection": {
+        "fields": [
+          "forecast_year",
+          "decision_date"
+        ],
+        "latest_period_used": "Y-1",
+        "rule": "Feature eligibility uses only CY Y-3 through Y-1 filings: exactly one Reliability record in each, one consistent reporting standard, at least 1000 customers in CY Y-1, and an allowed ownership category. The binary label is defined from the utility SAIDI excluding major event days for the calendar year following the decision year; rows without that observed value are dropped and the value never enters features."
+      }
+    }
+  },
+  "references": {
+    "entity_columns": [
+      "utility_id",
+      "state",
+      "ownership_code",
+      "reporting_standard"
+    ],
+    "persistence_column": null,
+    "persistence_direction": 1
+  }
+}

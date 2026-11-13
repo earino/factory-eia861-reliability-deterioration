@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "terms_url": "https://www.eia.gov/about/copyrights_reuse.php",
+  "terms_sha256": "c16dcdd32bd0294eef3dbc8cdc11cd3a815502be1e938f1dfc84736358a4462c",
+  "documentation_url": "https://www.eia.gov/electricity/data/eia861/",
+  "documentation_sha256": "c3cb5b138952c8cd0fae3e479b3df07019cd21e6097a2987c2ed2a2224b3170a",
+  "quoted_excerpt": "U.S. government publications are in the public domain and are not subject to copyright protection. You may use and/or distribute any of our data, files, databases, reports, graphs, charts, and other information products that are on our website or that you receive through our email distribution service.",
+  "excerpt_found": true,
+  "excerpt_match": "contiguous",
+  "scope": "Captured publisher bytes and quote presence; semantic applicability reviewed separately"
+}
