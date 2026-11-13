@@ -1,0 +1,319 @@
+{
+  "artifact_version": "6aa939acba34270679973c9e8b5ea12984814b146a32ca50ec71d3b23ac2790a",
+  "assets": {
+    "LICENSE-EVIDENCE.json": {
+      "bytes": 820,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/LICENSE-EVIDENCE.json",
+      "hf_path": "LICENSE-EVIDENCE.json",
+      "sha256": "e42a16e9013a232d5a73a5ffc1db6197aa7417d7cf573d88612cf3211c74fed9"
+    },
+    "LICENSE.md": {
+      "bytes": 1444,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/LICENSE.md",
+      "hf_path": "LICENSE.md",
+      "sha256": "3a6aa6fe2a62707ee51429f107f3255567836b96c3e6d41d071e251179e1f65e"
+    },
+    "README.md": {
+      "bytes": 7792,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/README.md",
+      "hf_path": "README.md",
+      "sha256": "2b032e6f12130f1b8ca4771864c2a374d4a3965e4c1860ec6813297ab3059e78"
+    },
+    "SOURCES.json": {
+      "bytes": 4258,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/SOURCES.json",
+      "hf_path": "SOURCES.json",
+      "sha256": "6f062650ffce5320e2b6da73fff1edd6d2b2f5cd33510387388698b51aa89a9f"
+    },
+    "evaluation.json": {
+      "bytes": 1846,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/evaluation.json",
+      "hf_path": "evaluation.json",
+      "sha256": "73b4951b670f6482eea54ea9e5b3ff4c99c886860275be3f616112c8de81bdaf"
+    },
+    "extract__meta.json": {
+      "bytes": 1998,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/extract__meta.json",
+      "hf_path": "extract/meta.json",
+      "sha256": "5623e36dec6ec0a313cb0e3d0b2cd033b4731519423d433cb3a7dea42d8e785d"
+    },
+    "extract__private__holdout.csv": {
+      "bytes": 290700,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/extract__private__holdout.csv",
+      "hf_path": "extract/private/holdout.csv",
+      "sha256": "721984dd348b46d1a1e468cf170d7a6e28e3ecf744919a51d7211183972061ff"
+    },
+    "extract__public__eval.csv": {
+      "bytes": 182562,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/extract__public__eval.csv",
+      "hf_path": "extract/public/eval.csv",
+      "sha256": "7a6310d4685523a3655cec1b57dd9e1dcf2df739d4bac4540a6bf45b84ce6d78"
+    },
+    "extract__public__train.csv": {
+      "bytes": 341953,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/extract__public__train.csv",
+      "hf_path": "extract/public/train.csv",
+      "sha256": "52107eccf49ebf0d76599065baa13c9c7dcad721a27e4e446273470b404c8782"
+    },
+    "extract__quality.json": {
+      "bytes": 23057,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/extract__quality.json",
+      "hf_path": "extract/quality.json",
+      "sha256": "f8f15851b6407e76888e87180f338f5e7a0b66994a7ac2517e02cba0a26703b3"
+    },
+    "get_dataset.py": {
+      "bytes": 3680,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/get_dataset.py",
+      "hf_path": "get_dataset.py",
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48"
+    },
+    "qualification.json": {
+      "bytes": 20313,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/qualification.json",
+      "hf_path": "qualification.json",
+      "sha256": "6f7982722ce91800a467deb1fc3f681cedc3a247802b0360fd70f8e5fd174331"
+    },
+    "reproduction__LICENSE-CC0-1.0.txt": {
+      "bytes": 7048,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__LICENSE-CC0-1.0.txt",
+      "hf_path": "reproduction/LICENSE-CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    "reproduction__LICENSE-MIT.txt": {
+      "bytes": 1124,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__LICENSE-MIT.txt",
+      "hf_path": "reproduction/LICENSE-MIT.txt",
+      "sha256": "56b932ff064e5da113ae10175c8546325f64f26e1ece71683ffcbf8b2304fe1c"
+    },
+    "reproduction__artifact_scrub.py": {
+      "bytes": 11369,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__artifact_scrub.py",
+      "hf_path": "reproduction/artifact_scrub.py",
+      "sha256": "8c663253e691a7b8751f9c853b40a3752a833360caafb1ea8e8f534e64af4b68"
+    },
+    "reproduction__build.py": {
+      "bytes": 47905,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__build.py",
+      "hf_path": "reproduction/build.py",
+      "sha256": "268e7e918df63581a60e1596426520f0901317c3e3d9fb6a97309a8458b4abb7"
+    },
+    "reproduction__construction.json": {
+      "bytes": 22694,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__construction.json",
+      "hf_path": "reproduction/construction.json",
+      "sha256": "4ba0e46f119e0524f2dbff39e36f50f0d22cdb939efc9cfd8b3f582b9adab1f0"
+    },
+    "reproduction__dataset_package.py": {
+      "bytes": 7927,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__dataset_package.py",
+      "hf_path": "reproduction/dataset_package.py",
+      "sha256": "c2364defe58dcc99322be59a1bb04894ce00e823ce37afeb37bc31012f744327"
+    },
+    "reproduction__dataset_run.py": {
+      "bytes": 12381,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__dataset_run.py",
+      "hf_path": "reproduction/dataset_run.py",
+      "sha256": "8085fae14d6e93b852e692e18c1ef72113a3601f48f78901b6d1ae6db278de57"
+    },
+    "reproduction__get_dataset.py": {
+      "bytes": 3680,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__get_dataset.py",
+      "hf_path": "reproduction/get_dataset.py",
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48"
+    },
+    "reproduction__leakage_battery.py": {
+      "bytes": 17379,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__leakage_battery.py",
+      "hf_path": "reproduction/leakage_battery.py",
+      "sha256": "adbf7ee0aca0012b78cc1f1e4aeb968a23717cae30f66a02e080215e75f830e3"
+    },
+    "reproduction__provenance.json": {
+      "bytes": 573,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__provenance.json",
+      "hf_path": "reproduction/provenance.json",
+      "sha256": "c4b7e3bae1aa9b5152d0080fd6ef89ce05da483deaa897e8ffa979063150217c"
+    },
+    "reproduction__qualify_dataset.py": {
+      "bytes": 66067,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__qualify_dataset.py",
+      "hf_path": "reproduction/qualify_dataset.py",
+      "sha256": "bff6d43d0904182e2612c32bab702e41addbf389904a236c209e78be39e37a6b"
+    },
+    "reproduction__recovery_recipes.py": {
+      "bytes": 17609,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__recovery_recipes.py",
+      "hf_path": "reproduction/recovery_recipes.py",
+      "sha256": "f64c542fcda232169c95ace17421b45275194b934938c0ea4c9b68e6f844ad0e"
+    },
+    "reproduction__requirements.txt": {
+      "bytes": 160,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__requirements.txt",
+      "hf_path": "reproduction/requirements.txt",
+      "sha256": "5c72f3268174d20364624f76680e189c408a05dba2e7b8cfe12d077b3865e7f0"
+    },
+    "reproduction__source.json": {
+      "bytes": 20778,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__source.json",
+      "hf_path": "reproduction/source.json",
+      "sha256": "11411e17d4813c8115c5b8c79fba1ce04fca81879ce7162ec21ebab38b8bc819"
+    },
+    "reproduction__source_io.py": {
+      "bytes": 5607,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__source_io.py",
+      "hf_path": "reproduction/source_io.py",
+      "sha256": "0c60eed4968cd342148efbaac7e4fa98f00708d8e6c14c0929928687b9af1ea3"
+    },
+    "reproduction__train.py": {
+      "bytes": 2500,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__train.py",
+      "hf_path": "reproduction/train.py",
+      "sha256": "a3c6bcf13735bc85c52129ded68f839090dffdc266ebc3810dc61b2e6ea5e7e8"
+    },
+    "reproduction__validate.py": {
+      "bytes": 1277,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__validate.py",
+      "hf_path": "reproduction/validate.py",
+      "sha256": "b597e7f84fed614e64b4a86fbecbd6ec0145916a24d0d221a796586976418e7b"
+    },
+    "reproduction__validate.sh": {
+      "bytes": 482,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/reproduction__validate.sh",
+      "hf_path": "reproduction/validate.sh",
+      "sha256": "3f06ca48f11c2e05d331b4d8394284925de660c1d4b086d2f8243959e83b7e6d"
+    },
+    "source-checks.json": {
+      "bytes": 9335,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/source-checks.json",
+      "hf_path": "source-checks.json",
+      "sha256": "ce545f3813bf6e09a7d13fc04e2bea36b5e78c4bdbe087df0c5ef5c746d2ba82"
+    },
+    "source-snapshot.tar.gz": {
+      "bytes": 60145119,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/source-snapshot.tar.gz",
+      "hf_path": "source-snapshot.tar.gz",
+      "sha256": "0ededf1f2b306f524d2aa3111541d041c2542ff2651d1ec9031adda7050cabe6"
+    },
+    "verify_dataset.py": {
+      "bytes": 1276,
+      "download": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/download/v-498e55482c3ed94b/verify_dataset.py",
+      "hf_path": "verify_dataset.py",
+      "sha256": "f4a4bb7f565cdbd075c520621f881876b491eaed91a5e6e70afb31e4753f9834"
+    }
+  },
+  "baseline": {
+    "metrics": {
+      "Validation calendar_identity auc": 0.6172737678427147,
+      "Validation calendar_identity brier": 0.15601477427071603,
+      "Validation full_model auc": 0.6963780731791774,
+      "Validation full_model brier": 0.1190485278420198,
+      "Validation majority_prior auc": 0.5,
+      "Validation majority_prior brier": 0.12500660216769513
+    },
+    "scope": "Existing unmodified runner baseline on public validation only; no holdout scoring"
+  },
+  "configs": [],
+  "dataset": "eia861-reliability-deterioration",
+  "documents": [
+    [
+      "README.md",
+      "Loading and reproduction"
+    ],
+    [
+      "evaluation.json",
+      "Measured baseline"
+    ],
+    [
+      "LICENSE.md",
+      "Licence and attribution"
+    ]
+  ],
+  "domain": "U.S. Energy Information Administration (EIA), U.S. Department of Energy",
+  "evaluation_use": "retrospective_research",
+  "github_repository": "earino/factory-eia861-reliability-deterioration",
+  "hf_repository": "earino/factory-eia861-reliability-deterioration",
+  "licenses": {
+    "attribution": "Source: U.S. Energy Information Administration, Form EIA-861, Annual Electric Power Industry Report.",
+    "citation": "U.S. Energy Information Administration, Form EIA-861, Annual Electric Power Industry Report.",
+    "code": "MIT",
+    "compilation_scope": "Our additional compilation rights only; upstream terms remain in force.",
+    "data_compilation": "CC0-1.0",
+    "source_data": "U.S. government work, public domain under 17 U.S.C. Sec. 105 as stated by EIA: data and files may be used and distributed; EIA requests an acknowledgment naming EIA and a publication date. No publisher licence grant is required or implied for third-party material EIA hosts (photographs, logo)."
+  },
+  "limitations": [
+    "Reliability indices are self-reported and unaudited by EIA; utilities may use IEEE 1366 or an internally defined method, and non-IEEE reporters self-determine which days are major event days, so the excluding-MED values are not strictly comparable across utilities.",
+    "Annual reliability is dominated by weather and storm occurrence, and the feature set deliberately contains no storm, outage-cause or capital-spending covariates, so a large share of label variance is unpredictable by construction; the task measures screening skill, not causal drivers.",
+    "This is a current-vintage retrospective built from today's published files: the values a regulator would have seen at the decision instant could differ from the final vintage, so no claim of proven historical operational availability is made.",
+    "Workbook layout is not stable across vintages: IEEE and other-standard column blocks coexist, some early files are .xls, and index columns were reportedly relabelled around 2021, so the parser must match headers by pattern and be re-checked for each new year.",
+    "The panel recurs utilities across cohorts; features are capped at CY Y-1 and a purge is enforced at split boundaries, but autocorrelation within splits still makes the effective sample size smaller than the row count.",
+    "Utilities that merge, change EIA utility number, file multiple state rows, or switch reporting standard are dropped, which removes some large multi-state investor-owned utilities and slightly favours stable filers.",
+    "The label multiplies a utility's own baseline by a fixed 1.5 factor, so a utility with an unusually low or unusually volatile three-year baseline is mechanically easier or harder to flag; the rule is frozen before any performance measurement and not re-tuned.",
+    "The assumption that a calendar year's final EIA-861 reliability data are public by 31 December of the following year is inferred from observed release timing and the publisher's file listing; freeze exact file vintages and record checksums in a manifest so a later re-release cannot silently change the benchmark.",
+    "EIA also publishes early-release versions that exclude utilities pending validation; only final-vintage ZIPs should be used, and the 2025 file should be confirmed final at build time.",
+    "Upstream third-party material is excluded: EIA photographs are privately licensed and the EIA logo is a registered trademark that must not be reproduced; only the numeric data are redistributed, and EIA's requested acknowledgment with a publication date must accompany any release.",
+    "Reliability indices are self-reported and unaudited by EIA. Utilities may use IEEE 1366 or an internally defined method, and non-IEEE reporters self-determine major event days, so excluding-MED values are not strictly comparable across utilities.",
+    "Annual reliability is dominated by weather and storm occurrence. The declared feature set contains no storm, outage-cause or capital-spending covariates, so a large share of label variance is unpredictable by construction.",
+    "This is a current-vintage retrospective built from today published files. Values a regulator would have seen at the decision instant could differ from the final vintage, and exact historical publication dates were not verified.",
+    "Workbook layout is not stable across vintages. The parser matches headers by text pattern, allows both IEEE and other-standard blocks, and fails with observed headers when required fields are missing. Legacy .xls vintages are read by an embedded BIFF reader rather than an external xls package.",
+    "The panel recurs utilities across cohorts. Features are capped at CY Y-1 and no holdout is used to choose the target, features, thresholds or splits, but autocorrelation within splits still makes effective sample size smaller than row count.",
+    "Utilities that merge, change EIA utility number, file multiple state rows or switch reporting standard are dropped. This removes some large multi-state investor-owned utilities and slightly favors stable filers.",
+    "The label multiplies a utility own baseline by a fixed 1.5 factor, so a utility with an unusually low or volatile three-year baseline is mechanically easier or harder to flag. The rule was frozen before measurement and is not re-tuned.",
+    "The assumption that a calendar year final EIA-861 reliability file is public by 31 December of the following year is inferred from release practice, not from a complete publication ledger. Timing observations are deliberately empty because actual publication dates were not verified; the 365-day value is a conservative calendar bound, not a measured publisher lag.",
+    "No persistence score column is shipped. The lag-1 SAIDI level is a feature, not a calibrated persistence score for a relative jump, so the persistence reference is null rather than fabricated.",
+    "The 2025 file is treated as final based on publisher evidence. If a later re-release changes it, the holdout labels can move.",
+    "The annual source has no day-level event date. Decision dates collapse to one day per forecast year, so event clustering uses the utility identity as the conservative independent unit available; this is coarser than a genuine outage-event date.",
+    "No uncertainty interval; observed differences do not establish universal headroom"
+  ],
+  "post": {
+    "paragraphs": [
+      "Given three years of published distribution-reliability history and utility attributes, will a U.S. electric distribution utility's day-to-day outage duration (SAIDI excluding major event days) jump by at least 50% above its own recent norm in the next calendar year?",
+      "Population: U.S. electric distribution utilities identified by EIA utility number that report a non-missing SAIDI excluding major event days in CY Y-3, Y-2 and Y-1 under one consistent reporting standard, report at least 1,000 customers in CY Y-1, carry an ownership code among investor-owned, municipal, cooperative, political subdivision, federal or state, appear with exactly one reliability record in each of those years, and report a SAIDI excluding major event days for CY Y+1. Utilities filing multiple state rows or changing utility number are dropped for that cohort. Missing CY Y+1 outcomes are dropped, never coded negative. No CY Y or later value enters features.",
+      "Target: Binary y=1 if the utility's reported SAIDI excluding major event days for calendar year Y+1 is greater than or equal to 1.5 times the median of its three reported SAIDI-excluding-major-event-day values for CY Y-3, Y-2 and Y-1; y=0 otherwise. Utilities with a missing CY Y+1 SAIDI-excluding-MED value are dropped, never coded 0.",
+      "Prediction time: 31 December of forecast year Y, using only Form EIA-861 reliability and utility attribute filings for calendar years Y-3, Y-2 and Y-1. Exact historical publication dates are assumed rather than verified. No CY Y or later value enters features.",
+      "Splits: Cohorts are forecast years Y = 2016, 2017, ..., 2024 (labels in CY 2017 ... 2025). Fixed chronological boundaries: train = Y 2016-2019, eval = Y 2020-2021, holdout = Y 2022-2024. No random reassignment and no re-splitting after measurement. Purge rule enforced in code: every feature year is <= Y-1, so the newest training feature year is 2018 while the earliest scored label year is 2021; therefore no training row's feature vector contains a year used to compute any eval or holdout label. Rows whose four-year window (Y-3 ... Y+1) spans a utility-number change or a change of reporting standard are dropped rather than carried across splits.",
+      "Outcome horizon: Calendar year Y+1, i.e. the twelve months beginning immediately after the decision instant; the outcome is observed when the CY Y+1 EIA-861 reliability file is published (roughly 9-12 months later).",
+      "Inputs: saidi_nomed_lag1: SAIDI excluding major event days for CY Y-1: minutes of non-momentary interruption the average customer experienced.; saidi_nomed_lag2: SAIDI excluding major event days for CY Y-2.; saidi_nomed_lag3: SAIDI excluding major event days for CY Y-3.; saidi_nomed_trend: Ratio of lag1 minus lag3 to lag3, a three-year level trend in non-storm outage duration. Missing when lag3 is zero; no interpolation.; saidi_with_med_lag1: SAIDI including major event days for CY Y-1, showing how much recent duration came from storm-scale days.; saifi_nomed_lag1: SAIFI excluding major event days for CY Y-1: non-momentary interruptions per customer-year.; saifi_with_med_lag1: SAIFI including major event days for CY Y-1.; caidi_nomed_lag1: CAIDI excluding major event days for CY Y-1: average minutes to restore an interruption. Derived from SAIDI divided by SAIFI when the reported CAIDI is absent and SAIFI is positive.; customers_lag1: Customer or meter count reported with the CY Y-1 Reliability schedule, used as a scale control.; reporting_standard: Whether the utility reported under IEEE 1366 or an internally defined other method in CY Y-1, normalized to IEEE or OTHER. A utility must carry one consistent value across the four filings used by a cohort.; ownership_code: Utility ownership type among investor-owned, municipal, cooperative, political subdivision, federal or state, from the CY Y-1 Reliability filing or the annual utility data file.; state: Utility reported state, used for calendar and regulatory-regime controls."
+    ],
+    "title": "EIA861 Reliability Deterioration"
+  },
+  "publication_commits": {
+    "github": "677f31e422eec52fdde44f18a44a96520b1ed209",
+    "huggingface": "345b43cc6cdbe14691bca74cfc067d62e2d980ee"
+  },
+  "qualification": {
+    "gate_version": "1.6.1",
+    "result": "PASSED"
+  },
+  "record_sha256": "2e800ddc8d156a75bee2e109389b9032cf88b05d21e70574fc25a27a00474dd0",
+  "release_date": "2026-11-13",
+  "release_schema": "factory-1",
+  "release_tag": "v-498e55482c3ed94b",
+  "schema_version": 1,
+  "site_revision": 1,
+  "source": {
+    "name": "U.S. Energy Information Administration (EIA), U.S. Department of Energy",
+    "url": "https://www.eia.gov/electricity/data/eia861/"
+  },
+  "splits": {
+    "eval": {
+      "rows": 1294
+    },
+    "holdout": {
+      "rows": 2062
+    },
+    "train": {
+      "rows": 2453
+    }
+  },
+  "summary": "Given three years of published distribution-reliability history and utility attributes, will a U.S. electric distribution utility's day-to-day outage duration (SAIDI excluding major event days) jump by at least 50% above its own recent norm in the next calendar year?",
+  "task_type": "binary-classification",
+  "title": "EIA861 Reliability Deterioration",
+  "urls": {
+    "catalog": "https://earino.github.io/dataset-factory-site/",
+    "github": "https://github.com/earino/factory-eia861-reliability-deterioration",
+    "github_release": "https://github.com/earino/factory-eia861-reliability-deterioration/releases/tag/v-498e55482c3ed94b",
+    "huggingface": "https://huggingface.co/datasets/earino/factory-eia861-reliability-deterioration",
+    "huggingface_version": "https://huggingface.co/datasets/earino/factory-eia861-reliability-deterioration/tree/v-498e55482c3ed94b",
+    "version": "https://earino.github.io/factory-eia861-reliability-deterioration/versions/v-498e55482c3ed94b/",
+    "website": "https://earino.github.io/factory-eia861-reliability-deterioration/"
+  }
+}

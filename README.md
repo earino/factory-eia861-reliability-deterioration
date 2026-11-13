@@ -15,6 +15,14 @@ configs:
     path: extract/private/holdout.csv
 ---
 
+<!-- dataset-factory:links -->
+**Dataset Factory · v-498e55482c3ed94b**
+
+[Dataset website](https://earino.github.io/factory-eia861-reliability-deterioration/versions/v-498e55482c3ed94b/) · [GitHub release](https://github.com/earino/factory-eia861-reliability-deterioration/releases/tag/v-498e55482c3ed94b) · [Hugging Face](https://huggingface.co/datasets/earino/factory-eia861-reliability-deterioration/tree/v-498e55482c3ed94b) · [Catalogue](https://earino.github.io/dataset-factory-site/)
+
+Artifact: 6aa939acba34270679973c9e8b5ea12984814b146a32ca50ec71d3b23ac2790a
+<!-- /dataset-factory:links -->
+
 # Forward prediction of day-to-day distribution reliability deterioration at U.S. electric utilities from Form EIA-861 reliability history
 
 Given three years of published distribution-reliability history and utility attributes, will a U.S. electric distribution utility's day-to-day outage duration (SAIDI excluding major event days) jump by at least 50% above its own recent norm in the next calendar year?
